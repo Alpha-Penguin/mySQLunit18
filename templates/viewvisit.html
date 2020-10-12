@@ -1,0 +1,46 @@
+<html>
+
+    <style>
+    table, th, td {
+    border: 1px solid black;
+    }
+    th {
+    text-align: left;
+    }
+    </style>
+
+    <body bgcolor="cyan">
+    <form method="POST" action="/">
+        <center>
+        <H1>Results of the Show all Visits query </H1> <br>
+        
+        <table>
+            <th>AptID</th>
+            <th>OwnerID</th>
+            <th>PetID</th>
+            <th>Date</th>
+            <th>Owing</th>
+            </tr> <br>
+        {% for item in data %}
+            <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            </tr> <br>
+        {% endfor %}
+        </table>
+
+        <br>
+
+        <input type = "submit" name="submit" value="Back">
+        
+        
+
+
+        
+        </center>
+    </form>
+</body>
+</htmlL>

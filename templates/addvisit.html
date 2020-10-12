@@ -1,0 +1,42 @@
+<HTML>
+    <BODY bgcolor="cyan">
+    <form method="POST" action="/addvisit">
+        <center>
+        <H1>Add a visit</H1> <br>
+		
+        
+  
+
+        <label for="owner">Select Owner:</label>
+        <select id="owner" name="owner">
+            {% for item in data1 %}
+            <option value="{{ item[0] }}">{{item[0]}}</option>
+            {% endfor %}
+        </select><br>
+        
+        <label for="pet">Select Pet:</label>
+        <select id="pet" name="pet">
+            {% for item in data2 %}
+            <option value="{{ item[0] }}">{{item[0]}}</option>
+            {% endfor %}
+        </select><br>
+        
+        <label for="start">Visit date:</label>
+        <input type="date" id="date" name="date"
+        value="2020-10-12"
+        min="2020-10-12" max="2020-12-31"><br>
+        
+        Owing <input type = "text" name= "owing" /> <br>
+		
+        
+		
+		
+		
+		</br>
+
+        <input type = "submit" name="submit" value="Add visit">
+        <input type = "submit" name="cancel" value="Cancel">
+        </center>
+    </form>
+    </BODY>
+    </HTML>
