@@ -101,8 +101,9 @@ def viewvisit():
 
 def getowner():
     cur = vetdb.cursor()
-    cur.execute("SELECT FirstName FROM owner")
+    cur.execute("SELECT FirstName, Surname FROM owner")
     data = cur.fetchall()
+    print(data)
     return data   
 
 
@@ -117,7 +118,11 @@ def getpet():
 #Gets Primary key # of persons name selected from drop down so it can be inserted into table
 def getpersonID(name):
     cur = vetdb.cursor()
-    query = ("SELECT OwnerID FROM owner WHERE FirstName='"+name+"'")
+    # Code goes here to separate first name and surname (split the string by a space)
+    chunks = name.split(' ')
+    fName = chunks[0]
+    sName = chunks[1]
+    query = ("SELECT OwnerID FROM owner WHERE FirstName='"+fName+"'AND Surname='"+sName+"'")
     cur.execute(query)
     data = cur.fetchall()
     return data

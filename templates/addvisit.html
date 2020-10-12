@@ -10,7 +10,7 @@
         <label for="owner">Select Owner:</label>
         <select id="owner" name="owner">
             {% for item in data1 %}
-            <option value="{{ item[0] }}">{{item[0]}}</option>
+            <option value="{{ item[0] }} {{item[1]}}">{{item[0]}} {{item[1]}}</option>
             {% endfor %}
         </select><br>
         
@@ -21,6 +21,7 @@
             {% endfor %}
         </select><br>
         
+
         <label for="start">Visit date:</label>
         <input type="date" id="date" name="date"
         value="2020-10-12"
